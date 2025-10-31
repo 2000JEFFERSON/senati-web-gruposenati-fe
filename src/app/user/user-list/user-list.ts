@@ -75,7 +75,7 @@ private http = inject(HttpClient);
   }
 
   deleteUserById(id: Number) {
-    this.http.delete(`https://serverjeffer-daeaerhbhgh2g4e7.mexicocentral-01.azurewebsites.net/api/user${id}`).pipe(
+    this.http.delete(`https://serverjeffer-daeaerhbhgh2g4e7.mexicocentral-01.azurewebsites.net/api/user/${id}`).pipe(
       tap(() => {
         const current = this.usersSubject.getValue();
         this.usersSubject.next(current.filter(u => u.id !== id));
