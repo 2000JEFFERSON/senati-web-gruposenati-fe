@@ -88,7 +88,7 @@ private http = inject(HttpClient);
   }
 
   getAllUsers(): void {
-    this.http.get<UserInterface[]>("http://app-senati-bre-ckhsbfe9ckewabdx.canadacentral-01.azurewebsites.net/API/Users").subscribe(users => {
+    this.http.get<UserInterface[]>("https://serverjeffer-daeaerhbhgh2g4e7.mexicocentral-01.azurewebsites.net/api/users").subscribe(users => {
       this.usersSubject.next(users);
     });
   }
