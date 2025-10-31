@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import Swal, { SweetAlertIcon } from 'sweetalert2'
-import { AsyncPipe } from '@angular/common'; // 👈 importa aquí
+import { AsyncPipe } from '@angular/common';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { UserInterface } from './UserInterface';
 
