@@ -1,0 +1,129 @@
+/* Fondo tecnológico directamente en el contenedor */
+.container {
+  min-height: 100vh;
+  margin: 0;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://img.freepik.com/vector-gratis/tecnologia-gradiente-fondo-futurista_23-2149122416.jpg?semt=ais_hybrid&w=740&q=80")
+    no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+/* Título */
+h3 {
+  text-align: center;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: #00e0ff;
+  text-shadow: 0 0 10px #00e0ff;
+  margin-bottom: 25px;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+th, td {
+  padding: 14px 18px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+  background: rgba(0, 198, 255, 0.2);
+  color: #00e0ff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transition: background 0.3s;
+}
+
+td a, td button {
+  color: #00e0ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+td a:hover, td button:hover {
+  text-shadow: 0 0 5px #00e0ff;
+}
+
+/* Botón eliminar */
+button.btn-link {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button.btn-link:hover {
+  text-shadow: 0 0 8px #ff4b4b;
+}
+
+/* Contenedor del botón principal */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+/* Botón principal con icono */
+button.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(0, 198, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+button.btn-primary:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 25px rgba(0, 198, 255, 1);
+}
+
+/* Icono "+" animado */
+.plus-icon {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00e0ff, 0 0 15px #00ffff;
+  animation: pulse 1.5s infinite alternate;
+}
+
+/* Animación de brillo */
+@keyframes pulse {
+  from {
+    text-shadow: 0 0 6px #00e0ff, 0 0 12px #00ffff;
+  }
+  to {
+    text-shadow: 0 0 14px #00ffff, 0 0 25px #00e0ff;
+  }
+}

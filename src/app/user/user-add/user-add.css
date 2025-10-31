@@ -1,6 +1,115 @@
-h3 {
-    margin-top: 10px; 
-    margin-bottom: 10px;
-    text-align: center;
-    background-color: yellow;
+/* Fondo tecnológico moderno */
+.tech-background {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image:
+    url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80"),
+    linear-gradient(135deg, #00111a, #000000);
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #ffffff;
+}
+
+/* Contenedor del formulario */
+.form-control {
+  max-width: 480px;
+  width: 90%;
+  background: rgba(0, 15, 30, 0.8);
+  border-radius: 16px;
+  padding: 35px 40px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  color: #e0f7ff;
+}
+
+/* Título */
+.form-control h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #00e0ff;
+  text-shadow: 0 0 12px #00ffff;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Etiquetas */
+.form-label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #aeeaff;
+}
+
+/* Campos */
+input.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: #ffffff;
+  transition: all 0.3s;
+}
+
+input.form-control::placeholder {
+  color: #aeeaff;
+  opacity: 0.6;
+}
+
+input.form-control:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 12px #00ffff;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Grupo de botones */
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+/* Botones base */
+.btn {
+  padding: 10px 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Botón primario */
+.btn-primary {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  border: none;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+/* Botón regresar */
+.btn-back {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: #00e0ff;
+  margin-right: 10px;
+}
+
+.btn-back:hover {
+  background: rgba(0, 255, 255, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
 }

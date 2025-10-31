@@ -1,17 +1,25 @@
-<form class="form-control" [formGroup]="formulario">
-
+<div class="tech-background">
+  <form class="form-control" [formGroup]="formulario">
     <h3>Agregar nuevo Usuario</h3>
-    <label for="" class="form-label">Id</label>
-    <input type="text" class="form-control" formControlName="id">
 
-    <label for="" class="form-label">Name</label>
-    <input type="text" class="form-control" formControlName="name">
+    <div class="input-container">
+      <label for="id" class="form-label">Id</label>
+      <input type="text" id="id" class="form-control" formControlName="id" placeholder="Ingrese el ID">
+    </div>
 
-    <label for="" class="form-label">Lastname</label>
-    <input type="text" class="form-control" formControlName="lastname">
+    <div class="input-container">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" id="name" class="form-control" formControlName="name" placeholder="Ingrese el nombre">
+    </div>
 
-    <br>
-    <button class="btn btn-primary" (click)="navigateTo('/')">Regresar</button>
-    &nbsp;
-    <button class="btn btn-primary" (click)="addNewUser()">Agregar</button>
-</form>
+    <div class="input-container">
+      <label for="lastname" class="form-label">Lastname</label>
+      <input type="text" id="lastname" class="form-control" formControlName="lastname" placeholder="Ingrese el apellido">
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-back" (click)="navigateTo('/')">Regresar</button>
+      <button class="btn btn-primary" (click)="addNewUser()">Agregar</button>
+    </div>
+  </form>
+</div>
