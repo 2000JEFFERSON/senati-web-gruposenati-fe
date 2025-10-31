@@ -33,7 +33,7 @@ export class UserAdd {
     this.newUser.name = String(this.formulario.controls.name.value);
     this.newUser.lastname = String(this.formulario.controls.lastname.value);
 
-    this.http.post("", this.newUser).subscribe(resultado => {
+    this.http.post("https://serverjeffer-daeaerhbhgh2g4e7.mexicocentral-01.azurewebsites.net/api/user", this.newUser).subscribe(resultado => {
       // console.log(resultado);
       this.showAlert("success", "Se guardó correctamente");
     });
