@@ -1,25 +1,43 @@
-<div class="tech-background">
-  <form class="form-control" [formGroup]="formulario">
-    <h3>Agregar nuevo Usuario</h3>
+<div class="tech-background d-flex justify-content-center align-items-center min-vh-100">
+  <form class="tech-form shadow-lg p-4 rounded text-light" [formGroup]="formulario">
+    <h3 class="text-center mb-4">Agregar Nuevo Usuario</h3>
 
-    <div class="input-container">
-      <label for="id" class="form-label">Id</label>
-      <input type="text" id="id" class="form-control" formControlName="id" placeholder="Ingrese el ID">
+    <div class="mb-3">
+      <label for="id" class="form-label">ID</label>
+      <input
+        type="text"
+        id="id"
+        class="form-control"
+        formControlName="id"
+        placeholder="Ingrese el ID"
+      >
     </div>
 
-    <div class="input-container">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" id="name" class="form-control" formControlName="name" placeholder="Ingrese el nombre">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name"
+        placeholder="Ingrese el nombre"
+      >
     </div>
 
-    <div class="input-container">
-      <label for="lastname" class="form-label">Lastname</label>
-      <input type="text" id="lastname" class="form-control" formControlName="lastname" placeholder="Ingrese el apellido">
+    <div class="mb-3">
+      <label for="lastname" class="form-label">Apellido</label>
+      <input
+        type="text"
+        id="lastname"
+        class="form-control"
+        formControlName="lastname"
+        placeholder="Ingrese el apellido"
+      >
     </div>
 
-    <div class="button-group">
-      <button class="btn btn-back" (click)="navigateTo('/')">Regresar</button>
-      <button class="btn btn-primary" (click)="addNewUser()">Agregar</button>
+    <div class="button-group d-flex justify-content-between mt-4">
+      <button class="btn btn-back" type="button" (click)="navigateTo('/')">Regresar</button>
+      <button class="btn btn-primary" type="button" (click)="addNewUser()">Agregar</button>
     </div>
   </form>
 </div>

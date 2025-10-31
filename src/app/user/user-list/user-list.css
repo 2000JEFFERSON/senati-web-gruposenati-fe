@@ -1,7 +1,7 @@
 /* Fondo tecnológico directamente en el contenedor */
 .container {
   min-height: 100vh;
-  margin: 0;
+  margin: 0 auto;
   padding: 60px 40px;
   display: flex;
   flex-direction: column;
@@ -9,86 +9,77 @@
   justify-content: flex-start;
 
   background: 
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url("https://img.freepik.com/vector-gratis/tecnologia-gradiente-fondo-futurista_23-2149122416.jpg?semt=ais_hybrid&w=740&q=80")
     no-repeat center center;
   background-size: cover;
-  color: #fff;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 255, 255, 0.25);
   backdrop-filter: blur(6px);
+  color: #fff;
 }
 
 /* Título */
 h3 {
   text-align: center;
-  font-size: 26px;
+  font-size: 28px;
   letter-spacing: 2px;
   color: #00e0ff;
   text-shadow: 0 0 10px #00e0ff;
   margin-bottom: 25px;
 }
 
+/* Contenedor de tabla más ancho */
+.table-wrapper {
+  width: 90%; /* ✅ más ancho */
+  max-width: 1400px; /* evita que crezca demasiado */
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
 /* Tabla */
-table {
-  width: 100%;
-  border-collapse: collapse;
+.table-dark {
+  background-color: rgba(0, 0, 0, 0.5) !important;
   border-radius: 10px;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
 }
 
-th, td {
-  padding: 14px 18px;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-th {
-  background: rgba(0, 198, 255, 0.2);
+.table thead th {
+  background: rgba(0, 198, 255, 0.25);
   color: #00e0ff;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 1px;
+  padding: 14px;
 }
 
-tr:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+.table tbody td {
+  padding: 14px 18px;
+  font-size: 15px;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
   transition: background 0.3s;
-}
-
-td a, td button {
-  color: #00e0ff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-td a:hover, td button:hover {
-  text-shadow: 0 0 5px #00e0ff;
 }
 
 /* Botón eliminar */
 button.btn-link {
   background: none;
   border: none;
-  color: #ff6b6b;
+  color: #ff6b6b !important;
   cursor: pointer;
   font-weight: 500;
+  text-decoration: none;
 }
-
 button.btn-link:hover {
   text-shadow: 0 0 8px #ff4b4b;
 }
 
-/* Contenedor del botón principal */
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 35px;
-}
-
-/* Botón principal con icono */
-button.btn-primary {
+/* Botón principal */
+.btn-primary {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -96,7 +87,6 @@ button.btn-primary {
   font-size: 16px;
   font-weight: 600;
   background: linear-gradient(90deg, #00c6ff, #0072ff);
-  color: #fff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -104,7 +94,7 @@ button.btn-primary {
   transition: all 0.3s ease;
 }
 
-button.btn-primary:hover {
+.btn-primary:hover {
   transform: scale(1.06);
   box-shadow: 0 0 25px rgba(0, 198, 255, 1);
 }
