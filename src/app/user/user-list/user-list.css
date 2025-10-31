@@ -1,120 +1,271 @@
-/* Fondo tecnológico directamente en el contenedor */
+/* --------- Fondo y fuente --------- */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://img.freepik.com/vector-gratis/tecnologia-gradiente-fondo-futurista_23-2149122416.jpg?semt=ais_hybrid&w=740&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+/* --------- Contenedor principal --------- */
 .container {
   min-height: 100vh;
-  margin: 0 auto;
-  padding: 60px 40px;
+  width: 100%;
+  padding: 60px 15px; /* Bootstrap padding responsivo */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("https://img.freepik.com/vector-gratis/tecnologia-gradiente-fondo-futurista_23-2149122416.jpg?semt=ais_hybrid&w=740&q=80")
-    no-repeat center center;
-  background-size: cover;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.25);
-  backdrop-filter: blur(6px);
-  color: #fff;
 }
 
-/* Título */
+/* --------- Título --------- */
 h3 {
   text-align: center;
-  font-size: 28px;
+  font-size: 2rem;
   letter-spacing: 2px;
   color: #00e0ff;
   text-shadow: 0 0 10px #00e0ff;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
-/* Contenedor de tabla más ancho */
-.table-wrapper {
-  width: 90%; /* ✅ más ancho */
-  max-width: 1400px; /* evita que crezca demasiado */
-  margin: 0 auto;
-  border-radius: 12px;
-  overflow-x: auto;
-}
-
-/* Tabla */
-.table-dark {
-  background-color: rgba(0, 0, 0, 0.5) !important;
-  border-radius: 10px;
-  overflow: hidden;
+/* --------- Tabla --------- */
+table {
   width: 100%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.table thead th {
-  background: rgba(0, 198, 255, 0.25);
+th, td {
+  padding: 16px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+th {
+  background: rgba(0, 198, 255, 0.08);
   color: #00e0ff;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 1px;
-  padding: 14px;
 }
 
-.table tbody td {
-  padding: 14px 18px;
-  font-size: 15px;
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: background 0.25s ease;
 }
 
-.table tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  transition: background 0.3s;
-}
-
-/* Botón eliminar */
-button.btn-link {
-  background: none;
-  border: none;
-  color: #ff6b6b !important;
-  cursor: pointer;
-  font-weight: 500;
+td a, td button {
+  color: #00e0ff;
   text-decoration: none;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
+
+td a:hover, td button:hover {
+  text-shadow: 0 0 6px #00e0ff;
+}
+
+/* --------- Botón eliminar --------- */
+button.btn-link {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
 button.btn-link:hover {
   text-shadow: 0 0 8px #ff4b4b;
 }
 
-/* Botón principal */
-.btn-primary {
+/* --------- Botón principal --------- */
+.button-container {
   display: flex;
+  justify-content: center;
+  margin-top: 35px;
+  width: 100%;
+}
+
+button.btn-primary {
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 12px 28px;
   font-size: 16px;
   font-weight: 600;
   background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 0 12px rgba(0, 198, 255, 0.6);
-  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 198, 255, 0.45);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.btn-primary:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 25px rgba(0, 198, 255, 1);
+button.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(0, 198, 255, 0.6);
+}
+
+/* --------- Icono "+" animado --------- */
+.plus-icon {
+  font-size: 20px;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00e0ff, 0 0 14px #00ffff;
+  animation: pulse 1.6s infinite alternate;
+}
+
+@keyframes pulse {
+  from { text-shadow: 0 0 6px #00e0ff, 0 0 12px #00ffff; }
+  to   { text-shadow: 0 0 14px #00ffff, 0 0 25px #00e0ff; }
+}
+
+/* Scoped styles: usar :host para no modificar body/global desde estilos de componente */
+:host {
+  display: block;
+  min-height: 100vh;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #fff;
+  padding: 60px 15px;
+  box-sizing: border-box;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://img.freepik.com/vector-gratis/tecnologia-gradiente-fondo-futurista_23-2149122416.jpg?semt=ais_hybrid&w=740&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Contenedor principal (dentro del component template) */
+:host .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Título */
+:host h3 {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #00e0ff;
+  text-shadow: 0 0 10px #00e0ff;
+  margin-bottom: 30px;
+}
+
+/* Tabla */
+:host table {
+  width: 100%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Celdas */
+:host th,
+:host td {
+  padding: 16px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+:host th {
+  background: rgba(0, 198, 255, 0.08);
+  color: #00e0ff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+:host tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: background 0.25s ease;
+}
+
+/* Enlaces y botones dentro de celdas */
+:host td a,
+:host td button {
+  color: #00e0ff;
+  text-decoration: none;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+:host td a:hover,
+:host td button:hover {
+  text-shadow: 0 0 6px #00e0ff;
+}
+
+/* Botón eliminar (link style) */
+:host button.btn-link {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+:host button.btn-link:hover {
+  text-shadow: 0 0 8px #ff4b4b;
+}
+
+/* Contenedor del botón principal */
+:host .button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+  width: 100%;
+}
+
+/* Botón principal (agregar) */
+:host button.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(0, 198, 255, 0.45);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+:host button.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(0, 198, 255, 0.6);
 }
 
 /* Icono "+" animado */
-.plus-icon {
-  font-size: 22px;
-  font-weight: bold;
+:host .plus-icon {
+  font-size: 20px;
   color: #00ffff;
-  text-shadow: 0 0 8px #00e0ff, 0 0 15px #00ffff;
-  animation: pulse 1.5s infinite alternate;
+  text-shadow: 0 0 8px #00e0ff, 0 0 14px #00ffff;
+  animation: pulse 1.6s infinite alternate;
 }
 
-/* Animación de brillo */
 @keyframes pulse {
-  from {
-    text-shadow: 0 0 6px #00e0ff, 0 0 12px #00ffff;
-  }
-  to {
-    text-shadow: 0 0 14px #00ffff, 0 0 25px #00e0ff;
-  }
+  from { text-shadow: 0 0 6px #00e0ff, 0 0 12px #00ffff; }
+  to   { text-shadow: 0 0 14px #00ffff, 0 0 25px #00e0ff; }
 }
-/* Correciones */
+
+/* Responsive */
+@media (max-width: 768px) {
+  :host h3 { font-size: 1.6rem; }
+  :host table, :host .button-container { width: 100%; }
+  :host th, :host td { padding: 12px 10px; font-size: 14px; }
+}
