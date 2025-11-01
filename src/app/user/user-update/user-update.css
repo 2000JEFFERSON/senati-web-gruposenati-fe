@@ -1,0 +1,129 @@
+/* Fondo tecnológico oscuro con el mismo estilo */
+.update-background {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80");
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #e0f7ff;
+  padding: 20px;
+}
+
+/* Contenedor del formulario */
+.update-form {
+  width: 60%;
+  max-width: 680px;
+  background: rgba(0, 15, 30, 0.8);
+  border-radius: 16px;
+  padding: 40px 45px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  color: #e0f7ff;
+  transition: all 0.3s ease;
+}
+
+/* Sutil resplandor al pasar el mouse */
+.update-form:hover {
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.5);
+}
+
+/* Título del formulario */
+.update-form h3 {
+  text-align: center;
+  font-size: 1.9rem;
+  color: #00e0ff;
+  text-shadow: 0 0 15px #00ffff;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Etiquetas */
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #aeeaff;
+  font-size: 15.5px;
+}
+
+/* Campos */
+.update-form .form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: #ffffff;
+  transition: all 0.3s ease;
+  font-size: 15.5px;
+  margin-bottom: 12px;
+}
+
+.update-form .form-control::placeholder {
+  color: #aeeaff;
+  opacity: 0.7;
+}
+
+.update-form .form-control:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 12px #00ffff;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Botones */
+.btn {
+  padding: 10px 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+}
+
+/* Botón regresar */
+.btn-back {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: #00e0ff;
+}
+
+.btn-back:hover {
+  background: rgba(0, 255, 255, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+/* Botón actualizar (ligeramente diferente del de agregar) */
+.btn-update {
+  background: linear-gradient(90deg, #00bfff, #005eff);
+  border: none;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+}
+
+.btn-update:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+  .update-form {
+    width: 90%;
+    padding: 30px 25px;
+  }
+
+  .update-form h3 {
+    font-size: 1.6rem;
+  }
+}
