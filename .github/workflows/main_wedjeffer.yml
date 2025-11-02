@@ -25,11 +25,15 @@ jobs:
           node-version: '22.x'  
           cache: 'npm'
 
-      # PASO CLAVE 2: Instalar dependencias y Compilar
-      - name: npm install and Angular build
+     # -----------------------------------------------------------------
+      # PASO CLAVE 2: Instalar dependencias y Compilar (USANDO NPX)
+      # -----------------------------------------------------------------
+      - name: npm install and Angular build (Using NPX)
         run: |
           npm install
-          npm run build -- --configuration=production
+          # 1. Ejecutar la compilación usando NPX
+          #    Esto busca el binario 'ng' dentro de la carpeta local 'node_modules/.bin/'
+          npx ng build --configuration=production
 
       # PASO CLAVE 3: Subir el artefacto compilado
       - name: Upload artifact for deployment job
@@ -68,3 +72,4 @@ jobs:
           slot-name: 'Production'
           # CAMBIO CRÍTICO: Usamos el nombre del artefacto para el paquete
           package: angular-app 
+
