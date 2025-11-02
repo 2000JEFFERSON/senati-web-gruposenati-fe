@@ -28,22 +28,22 @@ export class UserUpdate {
   private http = inject(HttpClient);
   private router = inject(Router);
 
-  private route = inject(ActivatedRoute); //INICIO
+  private route = inject(ActivatedRoute);
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.formulario.controls.id.setValue(params["id"]);
     });
   }
-  //FIN
+
   updateUser() {
     let id = Number(this.formulario.controls.id.value);
     this.newUser.id = id;
     this.newUser.name = String(this.formulario.controls.name.value);
     this.newUser.lastname = String(this.formulario.controls.lastname.value);
   
-    this.http.put(`https://app-senati-ncasafrancal-bkg6hdd0hhb9htfd.chilecentral-01.azurewebsites.net/api/user/${id}`, this.newUser).subscribe(resultado => {
-      // console.log(resultado);
+    this.http.put(`https://serverjeffer-daeaerhbhgh2g4e7.mexicocentral-01.azurewebsites.net/api/user/${id}`, this.newUser).subscribe(resultado => {
+  
       this.showAlert("success", "Se actualizó correctamente");
     });
   }
