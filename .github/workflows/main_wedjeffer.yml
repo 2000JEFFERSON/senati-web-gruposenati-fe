@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:  # <<< ESTE BLOQUE AHORA COMPILA ANGULAR
+  build:  # Job 1: Compila la aplicación Angular y genera el artefacto 'angular-app'
     runs-on: ubuntu-latest
     permissions:
       contents: read # This is required for actions/checkout
@@ -18,35 +18,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # -----------------------------------------------------------------
-      # PASO CLAVE 1: Configurar Node.js (Reemplaza la configuración de Java)
-      # -----------------------------------------------------------------
+      # PASO CLAVE 1: Configurar Node.js
       - name: Set up Node.js version
         uses: actions/setup-node@v4
         with:
-          # Usamos 20.x, que es LTS y compatible con tu versión 22.20.0 local
-          node-version: '22.x' 
+          node-version: '22.x'  
           cache: 'npm'
 
-      # -----------------------------------------------------------------
-      # PASO CLAVE 2: Instalar dependencias y Compilar (Reemplaza Maven)
-      # -----------------------------------------------------------------
+      # PASO CLAVE 2: Instalar dependencias y Compilar
       - name: npm install and Angular build
         run: |
           npm install
           npm run build -- --configuration=production
 
-      # -----------------------------------------------------------------
-      # PASO CLAVE 3: Subir el artefacto compilado (Reemplaza el artefacto .jar)
-      # -----------------------------------------------------------------
+      # PASO CLAVE 3: Subir el artefacto compilado
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: angular-app # Cambiamos el nombre del artefacto a 'angular-app'
-          # Esta es la ruta a la carpeta 'dist' que crea la compilación
+          name: angular-app 
           path: dist/senati-web-gruposenati-fe/browser 
 
-  deploy:
+  deploy: # Job 2: Descarga el artefacto y lo despliega a Azure
     runs-on: ubuntu-latest
     needs: build
     permissions:
@@ -54,13 +46,11 @@ jobs:
       contents: read #This is required for actions/checkout
     
     steps:
-      # -----------------------------------------------------------------
-      # PASO CLAVE 4: Descargar el artefacto compilado (No el JAR)
-      # -----------------------------------------------------------------
+      # PASO CLAVE 4: Descargar el artefacto compilado
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: angular-app # Descargamos el artefacto 'angular-app'
+          name: angular-app 
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -69,15 +59,12 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C6AA4CF077D1411AB71FCE41A9F6A9BF }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E4DA3B5409BC447782B54ACD0F35EC3D }}
 
-      # -----------------------------------------------------------------
-      # PASO CLAVE 5: Desplegar a Azure (Con la carpeta compilada)
-      # -----------------------------------------------------------------
+      # PASO CLAVE 5: Desplegar a Azure (El cambio está aquí)
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'wedjeffer'
           slot-name: 'Production'
-          # La línea CRÍTICA: Despliega el contenido del artefacto descargado (la carpeta compilada)
-          package: .
-
+          # CAMBIO CRÍTICO: Usamos el nombre del artefacto para el paquete
+          package: angular-app 
