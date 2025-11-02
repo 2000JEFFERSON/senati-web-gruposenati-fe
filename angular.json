@@ -27,7 +27,11 @@
                 "input": "public"
                 
               },
-              "web.config"
+              {
+                    "glob": "web.config",
+                    "input": "src", // El archivo está ahora en la carpeta src/
+                    "output": "/" // Copiarlo a la raíz de la salida (dist/browser/)
+                }
             ],
              "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
